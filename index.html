@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ejercicio</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+<body>
+ 
+	 <ul>
+	 	<li><img onclick="juego('piedra')" src="images/piedra.png" alt=""></li>
+	 	<li><img onclick="juego('papel')" src="images/papel.png" alt=""></li>
+	 	<li><img onclick="juego('tijera')" src="images/tijera.png" alt=""></li>
+	 	
+	 </ul>
+ 
+   
+
+    <form name="formu"><br> 
+    	
+    	<label name="labelMail" >Tu selección fue:</label>  
+    	<input type="text" id="txtcaja1" value=""> <br> <br>
+    	<label name="labelMail" >El sistema escogió:</label>  
+    	<input type="text" id="txtcaja2" value=""> <br> <br>
+    	<label name="labelMail" >El resultado del juego fue:</label>  
+    	<input type="text" id="txtcaja3" value=""> <br> <br><br><br><br>
+    </form> 
+
+
+ 	<script> 
+
+		 alert("presiona la imagen y escoge entre piedra, papel o tijera");
+
+
+		var caja1 = document.getElementById('txtcaja1'); 
+		function juego(elemento) {
+
+			var azar =  Math.floor(Math.random()* 3);  
+ 	 		var arreglo = ['piedra','papel', 'tijera'];	 
+	 		txtcaja2.value = arreglo[azar];
+
+			var txt =  elemento;
+			caja1.value = txt;  
+
+			 switch(caja1.value){
+	 	   	 case "piedra":
+		 	   	 if (arreglo[azar] === "piedra"){
+					  txtcaja3.value = "empate"; 	 
+				 } else if (arreglo[azar] === "papel"){
+				 	txtcaja3.value = "perdiste";
+				 } else{
+				 	txtcaja3.value = "ganaste";
+				 } 
+	 	   	 break;  
+	 	   	 case "papel":
+	 	   	 	if (arreglo[azar] === "piedra"){
+					  txtcaja3.value = "ganaste"; 	 
+				 } else if (arreglo[azar] === "papel"){
+				 	txtcaja3.value = "empate";
+				 } else{
+				 	txtcaja3.value = "perdiste";
+				 } 
+	 	   	 break; 
+	 	   	 case "tijera":
+	 	   	 	if (arreglo[azar] === "piedra"){
+					  txtcaja3.value = "perdiste"; 	 
+				 } else if (arreglo[azar] === "papel"){
+				 	txtcaja3.value = "ganaste";
+				 } else{
+				 	txtcaja3.value = "empate";
+				 } 
+	 	   	 break;
+	 	   	}
+		}
+			 
+
+	 </script>
+</body>
+</html>

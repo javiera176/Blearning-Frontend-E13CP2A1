@@ -1,0 +1,8 @@
+li {
+	float: left;
+	list-style-type: none;
+}
+
+form{
+	clear: both;
+} 
